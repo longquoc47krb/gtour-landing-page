@@ -16,12 +16,12 @@ const AutoSuggest = ({
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [suggestionsPosition, setSuggestionsPosition] = useState("down"); // Default: suggestion list down
-  const inputRef = useRef(null);
-  const suggestionsRef = useRef(null);
+  const inputRef = useRef<any>(null);
+  const suggestionsRef = useRef<any>(null);
 
   useEffect(() => {
-    function handleClickOutside(event) {
-      if (inputRef.current && !inputRef.current.contains(event.target)) {
+    function handleClickOutside(event: any) {
+      if (inputRef.current && !inputRef.current?.contains(event.target)) {
         setShowSuggestions(false);
       }
     }
@@ -30,7 +30,7 @@ const AutoSuggest = ({
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: any) => {
     const value = e.target.value;
     setInputValue(value);
 

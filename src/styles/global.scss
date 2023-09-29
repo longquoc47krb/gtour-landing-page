@@ -64,3 +64,25 @@
     gap: 6px;
   }
 }
+.scroll-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  padding: 10px 15px;
+  background-color: #1ec6b6;
+  color: white;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.scroll-to-top.visible {
+  display: block;
+}
+
+.scroll-to-top:hover {
+  background-color: $cyan;
+}

@@ -1,3 +1,4 @@
+import ScrollToTopButton from "@/components/common/scroll-to-top";
 import Title from "@/components/home/title";
 import { Meta } from "@/configs/Meta";
 import { HomeLayout } from "@/layouts/Home";
@@ -7,7 +8,6 @@ import ReasonSection from "@/sections/home/reasonSection";
 import TripSection from "@/sections/home/tripSection";
 
 export default function Home() {
-
   return (
     <HomeLayout
       meta={
@@ -21,6 +21,7 @@ export default function Home() {
       <TripSection />
       <ReasonSection />
       <ArticleSection />
+      <ScrollToTopButton />
     </HomeLayout>
   );
 }

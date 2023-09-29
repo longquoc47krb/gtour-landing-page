@@ -9,7 +9,7 @@ const InputField = ({
 }) => {
   const [inputValue, setInputValue] = useState("");
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: any) => {
     const value = e.target.value;
     setInputValue(value);
   };

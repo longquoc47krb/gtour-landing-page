@@ -14,11 +14,11 @@ const Dropdown = ({
   affixIcon: any;
 }) => {
   const [showDropdown, setShowDropdown] = useState(false);
-  const inputRef = useRef(null);
-  const dropdownRef = useRef(null);
+  const inputRef = useRef<any>(null);
+  const dropdownRef = useRef<any>(null);
   const [dropdownPosition, setDropdownPosition] = useState("down"); // Default: suggestion list down
   useEffect(() => {
-    function handleClickOutside(event) {
+    function handleClickOutside(event: any) {
       if (inputRef.current && !inputRef.current.contains(event.target)) {
         setShowDropdown(false);
       }
