@@ -1,0 +1,12 @@
+// Define mixins for common breakpoints
+@mixin mobile {
+  @media (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}

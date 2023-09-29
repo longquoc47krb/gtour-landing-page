@@ -1,0 +1,248 @@
+.header {
+  &-container {
+    background-size: cover;
+    background-position: center;
+    min-height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: #fff;
+    transition: transform 0.3s ease;
+    position: relative;
+    @include mobile {
+      min-height: 550px;
+    }
+    button {
+      border-radius: 5px;
+      padding: 9px 22.5px;
+      color: white;
+      background-color: $red;
+      font-size: 15px;
+      font-weight: 400;
+      height: 100%;
+      width: 100%;
+      &:hover {
+        background-color: $cyan;
+      }
+    }
+    .inner-content {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      margin-top: calc(209px + 74px);
+      margin-bottom: 50px;
+      width: 100%;
+      @include mobile {
+        margin-top: calc(22px + 74px);
+        margin-bottom: 50px;
+      }
+      h1 {
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 46.8px;
+        margin: 0;
+        @include mobile {
+          font-size: 24px;
+        }
+      }
+      p {
+        font-size: 15px;
+        font-weight: 500;
+        margin: 0;
+        line-height: 25.5px;
+      }
+    }
+  }
+}
+
+.menus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  img {
+    margin: 21px 0;
+  }
+}
+.menu-list {
+  display: flex;
+  align-items: center;
+  gap: 0 5px;
+  @include mobile {
+    display: none !important;
+  }
+}
+.menu-items {
+  position: relative;
+  font-size: 13px;
+  font-weight: 400;
+  height: 100%;
+}
+
+.menu-items a {
+  display: block;
+  font-size: inherit;
+  color: inherit;
+  text-decoration: none;
+}
+
+.menu-items button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: inherit;
+  font-size: inherit;
+  border: none;
+  background-color: transparent;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  cursor: pointer;
+}
+
+button span {
+  margin-left: 3px;
+}
+
+.menu-items > a,
+.menu-items button {
+  text-align: left;
+}
+
+.menu-items a:hover,
+.menu-items button:hover {
+  background-color: transparent;
+}
+
+.dropdown {
+  position: absolute;
+  right: auto;
+  left: 0;
+  box-shadow: 0 10px 15px -3px rgba(46, 41, 51, 0.08),
+    0 4px 6px -2px rgba(71, 63, 79, 0.16);
+  font-size: 0.875rem;
+  z-index: 9999;
+  list-style: none;
+  background-color: #fff;
+  color: black;
+  border-radius: 0.5rem;
+  display: none;
+}
+
+.dropdown.show {
+  display: block;
+  animation: popup 0.3s ease-in-out forwards;
+  transform: scale(0.7);
+  width: 240px !important;
+}
+
+.dropdown .dropdown-submenu {
+  position: absolute;
+  left: 105%;
+  top: 0;
+}
+.field-container,
+.field-header {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  background-color: white;
+  input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 400;
+    outline: none;
+  }
+}
+
+.affix-icon {
+  margin-right: 10px;
+  display: flex;
+  align-self: center;
+}
+
+.field-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 37px;
+  z-index: 1;
+  width: 100%;
+  background-color: #fff;
+  color: black;
+  border: 1px solid #ccc;
+  max-height: 200px;
+  overflow-y: auto;
+}
+/* Hiển thị danh sách gợi ý ở trên nếu vị trí là 'up' */
+.field-container.up .field-list {
+  bottom: 100%;
+  top: auto;
+  display: block;
+}
+/* Hiển thị danh sách gợi ý ở dưới nếu vị trí là 'down' */
+.field-container.down .field-list {
+  top: 100%;
+  bottom: auto;
+  display: block;
+}
+.field-list li {
+  padding: 0 10px;
+  cursor: pointer;
+  &:hover {
+    background: $gray;
+  }
+}
+
+.field-list li:hover {
+  background-color: #f0f0f0;
+}
+.collapse {
+  margin-top: 22px;
+  @include mobile {
+    margin-top: 6px;
+  }
+}
+.menu-cart-container {
+  display: flex;
+  align-items: center;
+  .cart {
+    position: relative;
+    padding: 15px;
+    span {
+      position: absolute;
+      top: 8px;
+      right: 4px;
+      background: #ff4a52;
+      color: white;
+      border-radius: 999px;
+      padding: 0 5px;
+      font-size: 10px;
+    }
+  }
+}
+nav {
+  visibility: visible;
+  &.hidden {
+    visibility: hidden;
+  }
+}
+@keyframes popup {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
